@@ -8,8 +8,7 @@
 
 import SwiftUI
 
-// add this line for initial commit
-// add this line in Dev
+
 
 struct ContentView : View {
     
