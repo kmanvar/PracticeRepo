@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-// add this line for initial commit
-// add this line in Dev
-
+// add this line in master
 struct ContentView : View {
     
     @ObservedObject var model = PostViewModel()
