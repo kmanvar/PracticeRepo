@@ -14,4 +14,6 @@ struct PostResponse: Codable {
     let title: String?
     let body: String?
 }
-//all done
+struct NewModel: Codable {
+    
+}
