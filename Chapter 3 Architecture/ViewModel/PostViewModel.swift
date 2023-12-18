@@ -14,6 +14,7 @@ class PostViewModel: ObservableObject {
     init() {
         getPosts()
     }
+    
     @Published var articles = [PostModel]()
     
     private func getPosts() {
