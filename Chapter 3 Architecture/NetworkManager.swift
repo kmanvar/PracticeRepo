@@ -28,4 +28,18 @@ class NetworkManager {
         
     }
     
+    static func loadDelivery(url: URL, completion: @escaping ([ModelDelivery]?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+            if let response = try? JSONDecoder().decode([ModelDelivery].self, from: data) {
+                DispatchQueue.main.async {
+                    completion(response)
+                }
+            }else{
+            }
+        }.resume()
+    }
 }

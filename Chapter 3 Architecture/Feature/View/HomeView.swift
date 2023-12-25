@@ -27,40 +27,29 @@ extension YourDataType {
 
 @available(iOS 14.0, *)
 struct HomeView: View {
-    
-    
     var data = YourDataType.dummyData()
+    
+    @StateObject private var objDeliveriesVM = HomeViewModel()
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
-                    // Delivery Horizontal CollectionView
-                    Text("Delivery")
-                        .font(.headline)
-                        .padding()
+                    HeaderTitleView(title: "Deliveries")
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 16) {
-                            ForEach(0..<10) { index in
-                                DeliveryItemView(index: index)
-                                    .frame(width: 150, height: 200)
+                        LazyHStack(spacing: 20) {
+                            
+                            ForEach(0..<objDeliveriesVM.arrDeliveries.count, id: \.self) { i in
+
+//                            ForEach(objDeliveriesVM.arrDeliveries) { data in
+                                DeliveryItemView(obj: objDeliveriesVM.arrDeliveries[i], index: "\(i)")
+                                    .frame(width: 150, height: 170)
                             }
                         }
                         .padding(.horizontal)
                     }
-//                    List(data, id: \.id) { item in
-//                        DeliveryItemView(index: 1)
-//                                .frame(width: 150, height: 200)
-//
-//                    }
                     
-                    
-                    
-                    
-                    // Offer Horizontal CollectionView
-                    Text("Offer")
-                        .font(.headline)
-                        .padding()
+                    HeaderTitleView(title: "Offers")
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 16) {
                             ForEach(0..<10) { index in
@@ -71,10 +60,7 @@ struct HomeView: View {
                         .padding(.horizontal)
                     }
                     
-                    // Store Vertical CollectionView
-                    Text("Store")
-                        .font(.headline)
-                        .padding()
+                    HeaderTitleView(title: "Store Ads")
                     ScrollView {
                         LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 16) {
                             ForEach(0..<20) { index in
@@ -85,27 +71,55 @@ struct HomeView: View {
                         .padding()
                     }
                 }
-                .navigationBarTitle("Home", displayMode: .automatic)
+                .onAppear {
+                    
+                }
+                .navigationBarTitle("", displayMode: .automatic)
             }
         }
     }
 }
 
 struct DeliveryItemView: View {
-    let index: Int
-    
+    let obj: ModelDelivery
+    let index : String
     var body: some View {
         VStack {
-            Image(systemName: "car.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 80)
-                .padding(20)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .clipShape(Circle())
             
-            Text("Delivery \(index + 1)")
+            let url = URL(string: "https://picsum.photos/200/200?random=\(index)")
+            if #available(iOS 15.0, *) {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .padding(5)
+                            .foregroundColor(.white)
+                        
+                        
+                    }
+                    else {
+                        Image(systemName: "car.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .padding(5)
+                            .foregroundColor(.white)
+                    }
+                }
+            } else {
+                Image(systemName: "car.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80, height: 80)
+                    .padding(5)
+                    .foregroundColor(.white)
+            }
+            
+            
+            
+            Text("Delivery ")
                 .foregroundColor(.black)
         }
         .frame(width: 150, height: 150)
@@ -113,6 +127,7 @@ struct DeliveryItemView: View {
         .cornerRadius(10)
         .shadow(radius: 5)
     }
+    
 }
 
 struct OfferItemView: View {
