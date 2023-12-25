@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		794E1FC32B39632800571446 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 794E1FC22B39632800571446 /* .gitignore */; };
 		796AE19E2B394C230070462D /* CustomDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AE19D2B394C220070462D /* CustomDeliveryView.swift */; };
 		796AE1A02B394C350070462D /* CustomOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AE19F2B394C350070462D /* CustomOfferView.swift */; };
 		796AE1A22B394C420070462D /* CustomStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AE1A12B394C420070462D /* CustomStoreView.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		4C157559E404D286A7AB47E6 /* Pods_Chapter3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chapter3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67744357D141164572678BD1 /* Pods-Chapter3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chapter3.debug.xcconfig"; path = "Target Support Files/Pods-Chapter3/Pods-Chapter3.debug.xcconfig"; sourceTree = "<group>"; };
+		794E1FC22B39632800571446 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		796AE19D2B394C220070462D /* CustomDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeliveryView.swift; sourceTree = "<group>"; };
 		796AE19F2B394C350070462D /* CustomOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOfferView.swift; sourceTree = "<group>"; };
 		796AE1A12B394C420070462D /* CustomStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStoreView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		838EDC11237B54F90068A594 = {
 			isa = PBXGroup;
 			children = (
+				794E1FC22B39632800571446 /* .gitignore */,
 				838EDC1C237B54F90068A594 /* Chapter 3 Architecture */,
 				838EDC1B237B54F90068A594 /* Products */,
 				7E5CBB79A16DD5B49DAA54E9 /* Pods */,
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794E1FC32B39632800571446 /* .gitignore in Resources */,
 				838EDC2A237B54FB0068A594 /* LaunchScreen.storyboard in Resources */,
 				838EDC27237B54FB0068A594 /* Preview Assets.xcassets in Resources */,
 				838EDC24237B54FB0068A594 /* Assets.xcassets in Resources */,
