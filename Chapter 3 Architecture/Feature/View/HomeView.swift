@@ -40,7 +40,7 @@ struct HomeView: View {
                             
                             ForEach(0..<objDeliveriesVM.arrDeliveries.count, id: \.self) { i in
                                 CustomDeliveryView(obj: objDeliveriesVM.arrDeliveries[i], index: "\(i)")
-                                    .frame(width: 150, height: 170)
+                                    .frame(width: 150, height: 120)
                             }
                         }
                         .padding(.horizontal)
@@ -63,7 +63,9 @@ struct HomeView: View {
                         LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 16) {
                             ForEach(0..<20) { index in
                                 CustomStoreView(index: index)
-                                    .frame(height: 150)
+                                    .frame(height: 170)
+                                    .padding(.horizontal,5)
+                            
                             }
                         }
                         .padding()

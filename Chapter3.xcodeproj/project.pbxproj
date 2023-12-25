@@ -78,13 +78,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7994233B2B355D1E00305C1D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		7994233C2B355D2500305C1D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +180,6 @@
 			children = (
 				799423482B359C4900305C1D /* CustomView */,
 				7994233C2B355D2500305C1D /* ViewModel */,
-				7994233B2B355D1E00305C1D /* Model */,
 				7994233A2B355D1300305C1D /* View */,
 			);
 			path = Feature;

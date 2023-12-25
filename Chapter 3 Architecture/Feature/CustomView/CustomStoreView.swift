@@ -13,46 +13,81 @@ struct CustomStoreView: View {
     let index: Int
     
     var body: some View {
-        VStack(){
+        VStack{
             let url = URL(string: "https://picsum.photos/200/160?random=\(index)")
 
-            Image(systemName: "car.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 80)
-                .padding(5)
-                .foregroundColor(.white)
-            
-            Text("Dominoss")
-                .foregroundColor(.black)
-                .frame(alignment: .leading)
-
-            HStack{
-                if #available(iOS 15.0, *) {
-                    HStack {
-                        Image(systemName: "star.fill")
+            if #available(iOS 15.0, *) {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .frame(height: 100)
+                            .aspectRatio(contentMode: .fill)
+                
                             .foregroundColor(.white)
-                            .frame(width: 20, height: 20)
-                        Text("5.0")
+                        
+                        
+                    }
+                    else {
+                        Image(systemName: "car.fill")
+                            .resizable()
+                            .frame(height: 100)
+                            .aspectRatio(contentMode: .fill)
+                          
                             .foregroundColor(.white)
                     }
-                    .padding(EdgeInsets(top: 4, leading: 5, bottom: 4, trailing: 5))
-                    .background(Capsule().fill(Color.cyan))
-                } else {
-                    // Fallback on earlier versions
                 }
-
-
-                Text("| 30-45 mins |")
-                    .foregroundColor(.black)
-
+            } else {
+                Image(systemName: "car.fill")
+                                    .resizable()
+                                    .frame(height: 100)
+                                    .aspectRatio(contentMode: .fill)
+                                  
+                                    .foregroundColor(.white)
             }
+
+            
+        VStack (alignment: .leading){
+            
+            Text("Dominoss")
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity,maxHeight: 20,alignment: .leading)
+            
+                
+                HStack(){
+                    if #available(iOS 15.0, *) {
+                        HStack {
+                            Image(systemName: "star.fill")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 15, height: 15)
+                            Text("5.0")
+                                .foregroundColor(.white)
+                                .font(.caption)
+                        }
+                        .padding(.horizontal,7)
+                        .padding(.vertical,2)
+                        .background(Capsule().fill(Color.cyan))
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    
+                    
+                    Text("| 30-45 mins |")
+                        .font(.caption)
+                        .foregroundColor(.black)
+                    
+                }
+            }
+        .padding(.horizontal,7)
+            Spacer()
         }
-        
-        .frame(width: 200, height: 200)
-        .background(Color.red)
+        .frame(height: 170)
+        .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
+
     }
 }
 

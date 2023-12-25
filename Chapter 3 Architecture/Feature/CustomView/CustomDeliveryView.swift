@@ -21,9 +21,8 @@ struct CustomDeliveryView: View {
                     if let image = phase.image {
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .padding(5)
+                            .frame(maxHeight: 80)
+                            .aspectRatio(contentMode: .fill)
                             .foregroundColor(.white)
                         
                         
@@ -31,7 +30,7 @@ struct CustomDeliveryView: View {
                     else {
                         Image(systemName: "car.fill")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 80, height: 80)
                             .padding(5)
                             .foregroundColor(.white)
@@ -40,21 +39,20 @@ struct CustomDeliveryView: View {
             } else {
                 Image(systemName: "car.fill")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 80, height: 80)
                     .padding(5)
                     .foregroundColor(.white)
             }
             
-            
-            
+        
             Text("Delivery ")
                 .foregroundColor(.black)
         }
-        .frame(width: 150, height: 150)
+        .frame(width: 150, height: 110)
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
     }
-    
+
 }
