@@ -1,32 +1,8 @@
 import SwiftUI
 
-struct YourDataType: Identifiable {
-    let id: UUID
-    let name: String
-    let description: String
-}
-
-extension YourDataType {
-    static func dummyData() -> [YourDataType] {
-        return [
-            YourDataType(id: UUID(), name: "Item 1", description: "Description for Item 1"),
-            YourDataType(id: UUID(), name: "Item 2", description: "Description for Item 2"),
-            YourDataType(id: UUID(), name: "Item 3", description: "Description for Item 3"),
-            YourDataType(id: UUID(), name: "Item 4", description: "Description for Item 4"),
-            YourDataType(id: UUID(), name: "Item 5", description: "Description for Item 5"),
-            YourDataType(id: UUID(), name: "Item 6", description: "Description for Item 6"),
-            YourDataType(id: UUID(), name: "Item 7", description: "Description for Item 7"),
-            YourDataType(id: UUID(), name: "Item 8", description: "Description for Item 8"),
-            YourDataType(id: UUID(), name: "Item 9", description: "Description for Item 9"),
-            YourDataType(id: UUID(), name: "Item 10", description: "Description for Item 10")
-        ]
-    }
-}
-
-
 @available(iOS 14.0, *)
 struct HomeView: View {
-    var data = YourDataType.dummyData()
+
     
     @StateObject private var objDeliveriesVM = HomeViewModel()
     

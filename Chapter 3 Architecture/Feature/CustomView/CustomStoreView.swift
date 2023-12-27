@@ -53,7 +53,10 @@ struct CustomStoreView: View {
                     .foregroundColor(.black)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity,maxHeight: 20,alignment: .leading)
-            
+            Text("200 ₹")
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity,maxHeight: 20,alignment: .leading)
                 
                 HStack(){
                     if #available(iOS 15.0, *) {
